@@ -7,16 +7,19 @@ const App: FC = () => {
   const [list, setList] = useState();
 
   const getTodoList = () => {
-    const tmp = {
+    const tmp1 = {
       id: 1,
       task: "サンプル",
+      done: false
     };
     const tmp2 = {
       id: 2,
       task: "サンプル2",
+      done: false,
     };
-    // var array:{id:number, task:string}[] = [tmp, tmp2];
-    return tmp2.id;
+    var array:{id:number, task:string, done:boolean}[] = [];
+    array.push(tmp1, tmp2)
+    return array;
   }
   // useEffect(() => {
   //   // TODO BEからリストを取得する処理
@@ -36,9 +39,8 @@ const App: FC = () => {
     <div className="container">
       <Header>TODOリスト</Header>
       <Item>
-        <List.Item as="li">
-          {getTodoList()}
-        </List.Item>
+        {getTodoList()}
+          
       </Item>
     </div>
   );
