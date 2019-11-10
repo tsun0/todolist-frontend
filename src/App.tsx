@@ -30,6 +30,7 @@ const tmp2: Todo = {
 };
 
 const codes = Object.keys(tmp2);
+const codes2 = Object.keys(tmp2);
 
 const App: FC = () => {
 
@@ -37,6 +38,7 @@ const App: FC = () => {
     <div className="container">
       <Header>TODOリスト</Header>
       <Item>
+        {/* TODO tmp roop */}
         {codes.map(code => (
           <List.Item as="li" key={code}>
             {code}
