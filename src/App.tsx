@@ -5,32 +5,19 @@ import './App.css';
 interface Todo {
   id: number;
   name: string;
-  remarks?: string;
 }
 
-interface TodoList { 
-  tasks: Todo[]; 
-}
+const tmp:Todo[] = [
+  {
+    id: 1,
+    name: "coding",
+  },
+  {
+    id: 2,
+    name: "test",
+  }
+]
 
-const tmp: TodoList = {
-  tasks: [
-    {
-      id: 1,
-      name: "coding",
-      remarks: "react hooks",
-    }
-  ]
-
-};
-
-const tmp2: Todo = {
-  id: 1,
-  name: "coding",
-  remarks: "react hooks",
-};
-
-const codes = Object.keys(tmp2);
-const codes2 = Object.keys(tmp2);
 
 const App: FC = () => {
 
@@ -39,9 +26,9 @@ const App: FC = () => {
       <Header>TODOリスト</Header>
       <Item>
         {/* TODO tmp roop */}
-        {codes.map(code => (
-          <List.Item as="li" key={code}>
-            {code}
+        {tmp.map(code => (
+          <List.Item as="li">
+            {code.id} {code.name}
           </List.Item>
         ))}
       </Item>
